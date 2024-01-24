@@ -2,12 +2,46 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <!-- https://developer.mozilla.org/zh-CN/docs/Web/HTTP/CSP -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
-    <title>Hello!</title>
+    <title>Hello World!</title>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
   </head>
   <body>
-    <h1>Hello!</h1>
-    We are using Node.js <span id="node-version"></span>, Chromium <span id="chrome-version"></span>, 和 Electron <span id="electron-version"></span>.
+    <style>
+      table,
+      td {
+        border: 1px solid #333;
+      }
+
+      thead,
+      tfoot {
+        background-color: #333;
+        color: #fff;
+      }
+    </style>
+    <p id="info"></p>
+
+    <input type="text" id="input" />
+
+    <button id="button" name="button" onclick="submit()">Click me</button>
+
+    <div>
+      <table>
+        <thead>
+          <tr>
+            <th>lineCode</th>
+            <th>content</th>
+            <th>source</th>
+          </tr>
+        </thead>
+        <tbody id="tbody">
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </body>
+  <script src="./render.js"></script>
 </html>
