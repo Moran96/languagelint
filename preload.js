@@ -8,3 +8,7 @@ contextBridge.exposeInMainWorld('versions', {
   // 暴露触发函数
   ipcMainStats: (args) => ipcRenderer.invoke('ipcMainStats', args)
 })
+
+contextBridge.exposeInMainWorld('FrameDialog', {
+  selectFileSync: (args) => ipcRenderer.invoke('selectFileSync', args)
+})

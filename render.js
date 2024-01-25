@@ -31,18 +31,18 @@ const getLanguageMap = async (str) => {
     dom += row
   })
 
-  // console.log('arr', arr)
-
   const tbody = document.getElementById('tbody')
   tbody.innerHTML = dom
 
 }
 
 const btn = document.getElementById('button')
-const input = document.getElementById('input')
 
-// D:\project\general-web\src\views\fault-warn-manage\detail\index.vue
 function submit () {
-  let val = input.value
-  getLanguageMap(val)
+  FrameDialog.selectFileSync().then(res => {
+    console.log('res', res)
+    getLanguageMap(res[0])
+  }).catch(e => {
+    console.log('err', e);
+  })
 }
